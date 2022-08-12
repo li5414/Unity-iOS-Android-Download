@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">JoyYouSDK</string>
+    <string name="default_web_client_id" translatable="false">887967835616-t8sqbus79t05mh0s7j74aic1q75ib1ej.apps.googleusercontent.com</string>
+    <string name="google_web_client_id" translatable="false">887967835616-t8sqbus79t05mh0s7j74aic1q75ib1ej.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://ragnarok-origin.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">887967835616</string>
+    <string name="google_api_key" translatable="false">AIzaSyDIyUNC-yDqjHn7a1OE2Y-F59eQTW3RLzw</string>
+    <string name="google_app_id" translatable="false">1:887967835616:android:98bd2cbda3bb51054bb785</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDIyUNC-yDqjHn7a1OE2Y-F59eQTW3RLzw</string>
+    <string name="google_storage_bucket" translatable="false">ragnarok-origin.appspot.com</string>
+    <string name="project_id" translatable="false">ragnarok-origin</string>
+    <string name="com.crashlytics.android.build_id" translatable="false">ebfc9917-5017-45d0-8876-04148dee4737</string>
+
+    <string name="state_unknown">Starting..."</string>
+    <string name="state_idle">Waiting for download to start</string>
+    <string name="state_fetching_url">Looking for resources to download</string>
+    <string name="state_connecting">Connecting to the download server</string>
+    <string name="state_downloading">Downloading resources</string>
+    <string name="state_completed">Download finished</string>
+    <string name="state_paused_network_unavailable">Download paused because no network is available</string>
+    <string name="state_paused_network_setup_failure">Download paused. Test a website in browser</string>
+    <string name="state_paused_by_request">Download paused</string>
+    <string name="state_paused_wifi_unavailable">Download paused because wifi is unavailable</string>
+    <string name="state_paused_wifi_disabled">Download paused because wifi is disabled</string>
+    <string name="state_paused_roaming">Download paused because you are roaming</string>
+    <string name="state_paused_sdcard_unavailable">Download paused because the external storage is unavailable</string>
+    <string name="state_failed_unlicensed">Download failed because you may not have purchased this app</string>
+    <string name="state_failed_fetching_url">Download failed because the resources could not be found</string>
+    <string name="state_failed_sdcard_full">Download failed because the external storage is full</string>
+    <string name="state_failed_cancelled">Download cancelled</string>
+    <string name="state_failed">Download failed</string>
+    <string name="state_failed_file_size_mismatch">file size mismatch</string>
+
+    <string name="default_notification_channel_id" translatable="false">joyyou-ro</string>
+    <string name="default_notification_channel_name" translatable="true">RO</string>
+    <string name="com.crashlytics.useFirebaseAppId">true</string>
+</resources>

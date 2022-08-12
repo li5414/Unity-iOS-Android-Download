@@ -1,0 +1,249 @@
+//apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+
+android {
+    lintOptions{
+        abortOnError false
+    }
+    compileSdkVersion 30
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        ndk {
+//            moduleName "RONDKLib"
+//            abiFilters 'x86', 'armeabi-v7a', 'arm64-v8a'
+//
+//        }
+        sourceSets {
+            main {
+//                jni.srcDirs = ['src/main/jni']
+                jniLibs.srcDirs = ['src/main/jniLibs']
+            }
+        }
+        externalNativeBuild {
+            cmake {
+                cppFlags "-g -O0 -std=c++14 -frtti -fexceptions -lz"
+            }
+        }
+        multiDexEnabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            jniDebuggable = true
+            debuggable = true
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+//    externalNativeBuild {
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
+//    }
+//    useLibrary 'org.apache.http.legacy'
+
+}
+
+repositories {
+    flatDir {
+        dirs 'joyyoulibs', 'tencentlibs', 'commonlibs', 'jingxiulibs', 'sentrylibs', 'facebooklibs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+//    implementation 'com.android.support:appcompat-v7:28.0.0'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+//
+//    compileOnly files('commonlibs/classes.jar')
+//    implementation files('commonlibs/org.apache.http.legacy.jar')
+//    compileOnly(name: 'com.android.support.support-compat-26.1.0', ext: 'aar')
+//    compileOnly(name: 'com.android.support.support-core-utils-26.1.0', ext: 'aar')
+//
+//    // joyyou libs
+//    compileOnly(name: 'joyyou-core-1.3.0', ext: 'aar')
+//    compileOnly(name: 'joyyou-base-1.3.0', ext: 'aar')
+//    compileOnly(name: 'joyyou-firebase-1.3.0', ext: 'aar')
+//    compileOnly(name: 'joyyou-mycard-1.3.0', ext: 'aar')
+//    compileOnly(name: 'oneStore_1.0', ext: 'aar')
+//    compileOnly(name: 'joyyou-google-billing-1.3.0', ext: 'aar')
+//    compileOnly(name: 'billing-4.1.0', ext: 'aar')
+//    compileOnly(name: 'joyyou_line_1.0', ext: 'aar')
+//    compileOnly(name: 'line-sdk-5.1.1', ext: 'aar')
+//    compileOnly(name: 'customtabs-27.0.2', ext: 'aar')
+//    compileOnly(name: 'joyyou_twitter_1.0', ext: 'aar')
+//    compileOnly(name: 'tweet-composer-3.3.1', ext: 'aar')
+//    compileOnly(name: 'twitter-core-3.3.1', ext: 'aar')
+//
+//    // firebase auth
+//    compileOnly files('joyyoulibs/androidx.annotation.annotation-1.1.0.jar')
+//    compileOnly files('joyyoulibs/androidx.arch.core.core-common-2.1.0.jar')
+//    compileOnly files('joyyoulibs/androidx.collection.collection-1.1.0.jar')
+//    compileOnly files('joyyoulibs/androidx.concurrent.concurrent-futures-1.0.0.jar')
+//    compileOnly files('joyyoulibs/androidx.lifecycle.lifecycle-common-2.3.0.jar')
+//    compileOnly(name: 'androidx.arch.core.core-runtime-2.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.asynclayoutinflater.asynclayoutinflater-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.browser.browser-1.4.0', ext: 'aar')
+//    compileOnly(name: 'androidx.coordinatorlayout.coordinatorlayout-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.core.core-1.2.0', ext: 'aar')
+//    compileOnly(name: 'androidx.cursoradapter.cursoradapter-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.customview.customview-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.documentfile.documentfile-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.drawerlayout.drawerlayout-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.fragment.fragment-1.1.0', ext: 'aar')
+//    compileOnly(name: 'androidx.interpolator.interpolator-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.legacy.legacy-support-core-ui-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.legacy.legacy-support-core-utils-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.lifecycle.lifecycle-livedata-2.3.0', ext: 'aar')
+//    compileOnly(name: 'androidx.lifecycle.lifecycle-livedata-core-2.3.0', ext: 'aar')
+//    compileOnly(name: 'androidx.lifecycle.lifecycle-runtime-2.3.0', ext: 'aar')
+//    compileOnly(name: 'androidx.lifecycle.lifecycle-viewmodel-2.3.0', ext: 'aar')
+//    compileOnly(name: 'androidx.loader.loader-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.localbroadcastmanager.localbroadcastmanager-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.print.print-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.slidingpanelayout.slidingpanelayout-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.swiperefreshlayout.swiperefreshlayout-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.versionedparcelable.versionedparcelable-1.1.0', ext: 'aar')
+//    compileOnly(name: 'androidx.viewpager.viewpager-1.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-base-18.0.1', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-basement-18.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-tasks-18.0.1', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-auth-21.0.5', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-auth-interop-20.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-common-20.1.1', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-components-17.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-measurement-connector-19.0.0', ext: 'aar')
+//    compileOnly(name: 'play-services-auth-20.2.0', ext: 'aar')
+//
+//    // firebase analysis & crash & message
+//    compileOnly files('joyyoulibs/com.google.firebase.firebase-annotations-16.0.0.jar')
+//    compileOnly files('joyyoulibs/com.google.firebase.firebase-encoders-17.0.0.jar')
+//    compileOnly files('joyyoulibs/com.google.firebase.firebase-encoders-proto-16.0.0.jar')
+//    compileOnly files('joyyoulibs/javax.inject.javax.inject-1.jar')
+//    compileOnly(name: 'androidx.arch.core.core-runtime-2.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.asynclayoutinflater.asynclayoutinflater-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.coordinatorlayout.coordinatorlayout-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.cursoradapter.cursoradapter-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.customview.customview-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.documentfile.documentfile-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.drawerlayout.drawerlayout-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.interpolator.interpolator-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.legacy.legacy-support-core-ui-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.legacy.legacy-support-core-utils-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.loader.loader-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.localbroadcastmanager.localbroadcastmanager-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.print.print-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.slidingpanelayout.slidingpanelayout-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.swiperefreshlayout.swiperefreshlayout-1.0.0', ext: 'aar')
+//    compileOnly(name: 'androidx.versionedparcelable.versionedparcelable-1.1.0', ext: 'aar')
+//    compileOnly(name: 'androidx.viewpager.viewpager-1.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.datatransport.transport-api-3.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.datatransport.transport-backend-cct-3.1.5', ext: 'aar')
+//    compileOnly(name: 'com.google.android.datatransport.transport-runtime-3.1.5', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-ads-identifier-18.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-base-18.0.1', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-basement-18.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-cloud-messaging-17.0.1', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-measurement-21.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-measurement-api-21.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-measurement-base-21.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-measurement-impl-21.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-measurement-sdk-21.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-measurement-sdk-api-21.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-stats-17.0.2', ext: 'aar')
+//    compileOnly(name: 'com.google.android.gms.play-services-tasks-18.0.1', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-analytics-21.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-common-20.1.1', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-components-17.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-crashlytics-18.2.11', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-crashlytics-ndk-18.2.11', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-datatransport-18.1.4', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-encoders-json-18.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-iid-21.1.0', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-iid-interop-17.1.0', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-installations-17.0.1', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-installations-interop-17.0.1', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-measurement-connector-19.0.0', ext: 'aar')
+//    compileOnly(name: 'com.google.firebase.firebase-messaging-23.0.5', ext: 'aar')
+//
+//    // facebook
+//    compileOnly files('facebooklibs/kotlin-stdlib-1.5.10.jar')
+//    compileOnly files('facebooklibs/kotlin-stdlib-common-1.5.10.jar')
+//    compileOnly files('facebooklibs/kotlin-stdlib-jdk7-1.5.10.jar')
+//    compileOnly(name: 'joyyou-facebook-1.4.0', ext: 'aar')
+//    compileOnly(name: 'facebook-bolts-13.2.0', ext: 'aar')
+//    compileOnly(name: 'facebook-common-13.2.0', ext: 'aar')
+//    compileOnly(name: 'facebook-core-13.2.0', ext: 'aar')
+//    compileOnly(name: 'facebook-login-13.2.0', ext: 'aar')
+//    compileOnly(name: 'androidx.activity.activity-1.2.0', ext: 'aar')
+//    compileOnly(name: 'androidx.browser.browser-1.4.0', ext: 'aar')
+//    compileOnly(name: 'androidx.cardview.cardview-1.0.0', ext: 'aar')
+//
+//    // sentry
+//    compileOnly files('sentrylibs/sentry-3.1.0.jar')
+//    compileOnly(name: 'sentry-android-3.1.0', ext: 'aar')
+//    compileOnly(name: 'sentry-android-core-3.1.0', ext: 'aar')
+//    compileOnly(name: 'sentry-android-ndk-3.1.0', ext: 'aar')
+////    implementation 'io.sentry:sentry-android:3.1.0'
+//
+//    // tencent
+//    compileOnly files('tencentlibs/bugly.jar')
+//    compileOnly files('tencentlibs/GCloudCore.jar')
+//
+//    // jingxiu
+//    compileOnly(name: 'jx_game_sdk_20220501_v1.0.2', ext: 'aar')
+//    implementation "io.grpc:grpc-okhttp:1.4.0"
+    implementation "io.grpc:grpc-okhttp:1.32.2"
+    implementation "io.grpc:grpc-protobuf-lite:1.4.0"
+    implementation "io.grpc:grpc-stub:1.4.0"
+    implementation 'javax.annotation:javax.annotation-api:1.2'
+}
+
+ext {
+    commonVersions = [
+            compileSdkVersion: 28,
+            buildToolsVersion: '28.0.3',
+            minSdkVersion    : 15,
+            targetSdkVersion : 28,
+            supportLibVersion : '28.0.0',
+    ]
+
+    commonDependencies = [
+            "support-v4" : "com.android.support:support-v4:${commonVersions.supportLibVersion}",
+            "appcompat-v7" : "com.android.support:appcompat-v7:${commonVersions.supportLibVersion}",
+            "design" : "com.android.support:design:${commonVersions.supportLibVersion}",
+            "recyclerview-v7" : "com.android.support:recyclerview-v7:${commonVersions.supportLibVersion}",
+    ]
+    //ADD_ROOT_TAG
+}
+
+task copySO(type : Copy){
+    from "build/intermediates/cmake/release/obj"
+    into 'build/Plugins/libs'
+}
+
+def zipFile = file('build/intermediates/bundles/release/classes.jar')
+task deleteBuild(type: Delete) {
+    delete "JoyYouSDKBase.jar"
+}
+
+task _makeJar(type: Jar) {
+    from zipTree(zipFile)
+    //from fileTree(dir: 'src/main',includes: ['assets/**'])//将assets目录打入jar包
+    baseName = "JoyYouSDKBase"
+    destinationDir = file("build/Plugins")
+}
+_makeJar.dependsOn(deleteBuild, build, copySO)

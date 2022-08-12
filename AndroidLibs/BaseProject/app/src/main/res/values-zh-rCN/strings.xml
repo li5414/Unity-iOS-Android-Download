@@ -1,0 +1,21 @@
+<resources>
+    <string name="state_unknown">正在连接服务器...</string>
+    <string name="state_idle">正在连接服务器...</string>
+    <string name="state_fetching_url">正在连接服务器...</string>
+    <string name="state_connecting">正在连接服务器...</string>
+    <string name="state_downloading">下载开始...</string>
+    <string name="state_completed">下载完成。</string>
+    <string name="state_paused_network_unavailable">网络不可用,请检查网络环境。</string>
+    <string name="state_paused_network_setup_failure">网络不可用,请检查网络环境。</string>
+    <string name="state_paused_by_request">已暂停下载</string>
+    <string name="state_paused_wifi_unavailable">非WIFI环境,暂停下载</string>
+    <string name="state_paused_wifi_disabled">非WIFI环境,暂停下载</string>
+    <string name="state_paused_roaming">漫游模式,暂停下载</string>
+    <string name="state_paused_sdcard_unavailable">存储空间不存在！！请检查配置</string>
+    <string name="state_failed_unlicensed">连接服务器失败</string>
+    <string name="state_failed_fetching_url">连接服务器失败</string>
+    <string name="state_failed_sdcard_full">存储空间不足！！请清理设备空间后重试</string>
+    <string name="state_failed_cancelled">下载失败</string>
+    <string name="state_failed">下载失败</string>
+    <string name="state_failed_file_size_mismatch">文件校验失败,请重启游戏</string>
+</resources>
